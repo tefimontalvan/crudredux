@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import clienteAxios from "../config/axios";
 
-const EditarProducto = () => {
+const EditarProducto = (props) => {
+  const [productoActual, setProductoActual] = useState();
+  const pedirDatos = async () => {
+    const productoSeleccionado = await clienteAxios.get(
+      "/productos/" + props.match.params.id
+    );
+    console.log({ productoSeleccionado });
+    setProductoActual(productoSeleccionado.data);
+  };
+
+  useEffect(() => {
+    pedirDatos();
+  }, []);
+
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content-center mt-5">
       <div className="col-md-8">
         <div className="card">
           <div className="card-body">
@@ -18,6 +32,7 @@ const EditarProducto = () => {
                   className="form-control"
                   placeholder="Nombre Producto"
                   name="nombre"
+                  value={productoActual?.nombre}
                 />
               </div>
 
@@ -28,6 +43,7 @@ const EditarProducto = () => {
                   className="form-control"
                   placeholder="Precio Producto"
                   name="precio"
+                  value={productoActual?.precio}
                 />
               </div>
 

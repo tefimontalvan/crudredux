@@ -74,6 +74,11 @@
       "nombre": "Cerveza",
       "precio": 200,
       "id": 22
+    },
+    {
+      "nombre": "Cerveza2",
+      "precio": 300,
+      "id": 23
     }
   ]
 }
