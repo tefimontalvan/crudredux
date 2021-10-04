@@ -66,7 +66,7 @@ const Productos = () => {
           </tr>
         </thead>
         <tbody>
-          {listaProductos?.data?.map((producto) => {
+          {listaProductos?.map((producto) => {
             return (
               <tr>
                 <td>{producto.nombre}</td>
