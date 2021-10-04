@@ -17,8 +17,6 @@ const NuevoProducto = ({ history }) => {
   const cargando = useSelector((state) => state.productos.loading);
   const error = useSelector((state) => state.productos.error);
 
-  console.log({ cargando, error });
-
   //mandar llamar el action de productoAction
   const agregarProducto = (producto) =>
     dispatch(crearNuevoProductoAction(producto));

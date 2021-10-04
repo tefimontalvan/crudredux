@@ -1,19 +1,14 @@
 {
   "productos": [
     {
-      "nombre": "Rib Eye",
-      "precio": "500",
+      "nombre": "Papas",
+      "precio": "20",
       "id": 7
     },
     {
-      "nombre": "Jugo de Limón",
+      "nombre": "Gaseosa",
       "precio": 100,
       "id": 9
-    },
-    {
-      "nombre": "1",
-      "precio": 2,
-      "id": 10
     },
     {
       "nombre": "Cerveza",
@@ -21,14 +16,9 @@
       "id": 11
     },
     {
-      "nombre": "Manzana",
+      "nombre": "Mani",
       "precio": 20,
       "id": 12
-    },
-    {
-      "nombre": "Manzana",
-      "precio": 20,
-      "id": 13
     },
     {
       "nombre": "Gin",
@@ -42,43 +32,8 @@
     },
     {
       "nombre": "Pizza",
-      "precio": 400,
+      "precio": "430",
       "id": 16
-    },
-    {
-      "nombre": "Lomo",
-      "precio": 400,
-      "id": 17
-    },
-    {
-      "nombre": "Pizza",
-      "precio": 500,
-      "id": 18
-    },
-    {
-      "nombre": "Hamburguesa",
-      "precio": 300,
-      "id": 19
-    },
-    {
-      "nombre": "Hamburguesa2",
-      "precio": 300,
-      "id": 20
-    },
-    {
-      "nombre": "Hamburguesa3",
-      "precio": 300,
-      "id": 21
-    },
-    {
-      "nombre": "Cerveza",
-      "precio": 200,
-      "id": 22
-    },
-    {
-      "nombre": "Cerveza2",
-      "precio": 300,
-      "id": 23
     }
   ]
 }

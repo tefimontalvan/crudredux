@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { editarProductoAction } from "../actions/productoActions";
+import { useHistory } from "react-router-dom";
 import clienteAxios from "../config/axios";
 
 const EditarProducto = (props) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [productoActual, setProductoActual] = useState();
   const pedirDatos = async () => {
     const productoSeleccionado = await clienteAxios.get(
@@ -15,6 +21,22 @@ const EditarProducto = (props) => {
     pedirDatos();
   }, []);
 
+  // Leer los datos del formulario
+  const onChangeFormulario = (e) => {
+    setProductoActual({
+      ...productoActual,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const submitEditarProducto = (e) => {
+    e.preventDefault();
+
+    dispatch(editarProductoAction(productoActual));
+
+    history.push("/");
+  };
+
   return (
     <div className="row justify-content-center mt-5">
       <div className="col-md-8">
@@ -24,7 +46,7 @@ const EditarProducto = (props) => {
               Editar Producto
             </h2>
 
-            <form>
+            <form onSubmit={submitEditarProducto}>
               <div className="form-group">
                 <label>Nombre Producto</label>
                 <input
@@ -33,6 +55,7 @@ const EditarProducto = (props) => {
                   placeholder="Nombre Producto"
                   name="nombre"
                   value={productoActual?.nombre}
+                  onChange={onChangeFormulario}
                 />
               </div>
 
@@ -44,6 +67,7 @@ const EditarProducto = (props) => {
                   placeholder="Precio Producto"
                   name="precio"
                   value={productoActual?.precio}
+                  onChange={onChangeFormulario}
                 />
               </div>
 
