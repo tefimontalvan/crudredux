@@ -29,6 +29,11 @@
       "nombre": "Rabas",
       "precio": 800,
       "id": 15
+    },
+    {
+      "nombre": "Pizza",
+      "precio": 200,
+      "id": 16
     }
   ]
 }
